@@ -1,0 +1,875 @@
+css
+/* ==============================
+   VARIÁVEIS
+   ============================== */
+
+:root {
+    --cor-primaria: #2563EB;
+    --cor-primaria-escura: #1E40AF;
+
+    --cor-secundaria: #087A36;
+    --cor-secundaria-clara: #DCFCE7;
+
+    --cor-destaque: #F59E0B;
+
+    --cor-texto: #1F2937;
+    --cor-fundo: #F9FAFB;
+    --cor-branca: #FFFFFF;
+
+    --espaco-1: 4px;
+    --espaco-2: 8px;
+    --espaco-3: 16px;
+    --espaco-4: 24px;
+    --espaco-5: 32px;
+    --espaco-6: 48px;
+}
+
+
+/* ==============================
+   CONFIGURAÇÕES GERAIS
+   ============================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--cor-texto);
+    background-color: var(--cor-fundo);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* ==============================
+   CABEÇALHO
+   ============================== */
+
+.cabecalho {
+    background-color: var(--cor-branca);
+
+    min-height: 80px;
+
+    padding: 0 8%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+    position: isolate;
+    top: 0;
+    z-index: 9999;
+}
+
+
+/* LOGO */
+
+.logo h1 {
+    color: var(--cor-primaria);
+    font-size: 1.5rem;
+}
+
+
+/* ==============================
+   MENU / LINKS
+   ============================== */
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.menu a {
+    color: var(--cor-texto);
+
+    font-size: 1rem;
+    font-weight: bold;
+
+    padding: 8px 4px;
+
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: var(--cor-primaria);
+}
+
+
+/* ==============================
+   HAMBURGER
+   ============================== */
+
+.hamburger {
+    display: none;
+
+    background-color: var(--cor-primaria);
+    color: var(--cor-branca);
+
+    border: none;
+
+    font-size: 28px;
+
+    width: 45px;
+    height: 45px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+}
+
+
+/* ==============================
+   ÁREA PRINCIPAL
+   ============================== */
+
+main {
+    width: 100%;
+}
+
+
+/* ==============================
+   HERO
+   ============================== */
+
+.hero {
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 80px 8%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 50px;
+}
+
+.hero-texto {
+    flex: 1;
+}
+
+.hero-texto h2 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+
+    color: var(--cor-primaria-escura);
+
+    margin-bottom: 20px;
+}
+
+.hero-texto p {
+    font-size: 1.1rem;
+
+    margin-bottom: 28px;
+
+    max-width: 550px;
+}
+
+.hero-imagem {
+    flex: 1;
+}
+
+.hero-imagem img {
+    width: 100%;
+
+    max-height: 400px;
+
+    object-fit: cover;
+
+    border-radius: 16px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+
+/* ==============================
+   BOTÃO
+   ============================== */
+
+.botao {
+    display: inline-block;
+
+    background-color: var(--cor-secundaria);
+    color: var(--cor-branca);
+
+    padding: 12px 24px;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+
+    border: 2px solid var(--cor-secundaria);
+
+    cursor: pointer;
+
+    transition: background-color 0.3s,
+                color 0.3s,
+                box-shadow 0.3s,
+                transform 0.2s;
+}
+
+
+/* HOVER - mouse sobre o botão */
+
+.botao:hover {
+    background-color: #06632C;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.20);
+
+    transform: translateY(-2px);
+}
+
+
+/* FOCUS - elemento selecionado pelo teclado */
+
+.botao:focus {
+    outline: 3px solid var(--cor-destaque);
+
+    outline-offset: 3px;
+}
+
+
+/* ACTIVE - botão sendo pressionado */
+
+.botao:active {
+    transform: translateY(0);
+
+    box-shadow: none;
+
+    background-color: #055326;
+}
+
+
+/* DISABLED - botão desativado */
+
+.botao:disabled {
+    background-color: #9CA3AF;
+
+    border-color: #9CA3AF;
+
+    color: #E5E7EB;
+
+    cursor: not-allowed;
+
+    box-shadow: none;
+
+    transform: none;
+}
+
+
+/* ==============================
+   SEÇÕES
+   ============================== */
+
+.secao {
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 70px 8%;
+
+    text-align: center;
+}
+
+.secao h2 {
+    color: var(--cor-primaria-escura);
+
+    font-size: 2rem;
+
+    margin-bottom: 20px;
+}
+
+.secao p {
+    max-width: 750px;
+
+    margin: 0 auto;
+}
+
+
+/* ==============================
+   CARDS
+   ============================== */
+
+.cards {
+    margin-top: 35px;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 24px;
+}
+
+.card {
+    background-color: var(--cor-branca);
+
+    padding: 30px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+
+    text-align: left;
+}
+
+.card h3 {
+    color: var(--cor-primaria);
+
+    margin-bottom: 10px;
+}
+
+
+/* ==============================
+   CONTATO
+   ============================== */
+
+.contato {
+    background-color: var(--cor-secundaria-clara);
+
+    max-width: none;
+}
+
+
+/* ==============================
+   RODAPÉ
+   ============================== */
+
+.rodape {
+    background-color: var(--cor-primaria-escura);
+
+    color: var(--cor-branca);
+
+    text-align: center;
+
+    padding: 25px;
+}
+
+
+/* ==============================
+   RESPONSIVIDADE
+   ============================== */
+
+/* TABLET / CELULAR */
+
+@media (max-width: 768px) {
+
+    /* CABEÇALHO */
+
+    .cabecalho {
+        padding: 15px 5%;
+    }
+
+
+    /* MOSTRA O HAMBURGER */
+
+    .hamburger {
+        display: block;
+    }
+
+
+    /* ESCONDE OS LINKS NO CELULAR */
+
+    .menu {
+        display: none;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        flex-direction: column;
+
+        padding: 50px 5%;
+
+        text-align: center;
+    }
+
+    .hero-texto h2 {
+        font-size: 2rem;
+    }
+
+    .hero-texto p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    /* CARDS */
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* SEÇÕES */
+
+    .secao {
+        padding: 50px 5%;
+    }
+
+}
+
+
+/* CELULARES PEQUENOS */
+
+@media (max-width: 480px) {
+
+    .logo h1 {
+        font-size: 1.2rem;
+    }
+
+    .hero-texto h2 {
+        font-size: 1.7rem;
+    }
+
+    .hero-texto p {
+        font-size: 1rem;
+    }
+
+}
+/* ==============================
+   CAMPOS DO FORMULÁRIO
+   ============================== */
+
+input,
+select,
+textarea {
+    width: 100%;
+
+    padding: 12px;
+
+    border: 2px solid #D1D5DB;
+
+    border-radius: 8px;
+
+    background-color: var(--cor-branca);
+
+    color: var(--cor-texto);
+
+    font-size: 1rem;
+
+    transition: border-color 0.3s,
+                box-shadow 0.3s;
+}
+
+
+/* HOVER - mouse sobre o campo */
+
+input:hover,
+select:hover,
+textarea:hover {
+    border-color: var(--cor-primaria);
+}
+
+
+/* FOCUS - campo selecionado */
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+
+    border-color: var(--cor-primaria);
+
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.20);
+}
+
+
+/* CAMPO VÁLIDO */
+
+input:valid,
+select:valid,
+textarea:valid {
+    border-color: var(--cor-secundaria);
+}
+
+
+/* CAMPO INVÁLIDO */
+
+input:invalid:not(:placeholder-shown),
+select:invalid:not(:placeholder-shown),
+textarea:invalid:not(:placeholder-shown) {
+    border-color: #DC2626;
+
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.15);
+}
+
+
+/* CAMPO DESABILITADO */
+
+input:disabled,
+select:disabled,
+textarea:disabled {
+    background-color: #E5E7EB;
+
+    color: #6B7280;
+
+    cursor: not-allowed;
+
+    border-color: #D1D5DB;
+}
+/* ==============================
+   FORMULÁRIO COMPACTO
+   ============================== */
+
+.formulario {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 32px;
+
+    background-color: var(--cor-branca);
+
+    border-radius: 12px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.10);
+}
+
+.formulario h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.formulario label {
+    display: block;
+
+    margin-bottom: 6px;
+
+    font-weight: bold;
+}
+
+.formulario input,
+.formulario select,
+.formulario textarea {
+    width: 100%;
+
+    margin-bottom: 18px;
+}
+/* ==============================
+   PÁGINA DE CADASTRO
+   ============================== */
+
+.pagina-cadastro-body {
+    background-color: var(--cor-fundo);
+}
+
+.pagina-cadastro {
+    width: 100%;
+    padding: 40px 20px;
+}
+
+.cadastro {
+    max-width: 600px;
+    margin: 0 auto;
+
+    background-color: var(--cor-branca);
+
+    padding: 32px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.10);
+}
+
+.cadastro h1 {
+    text-align: center;
+
+    color: var(--cor-primaria-escura);
+
+    font-size: 2rem;
+
+    margin-bottom: 28px;
+}
+
+.cadastro p {
+    margin-bottom: 16px;
+}
+
+.cadastro label {
+    display: block;
+
+    margin-bottom: 6px;
+
+    font-weight: bold;
+}
+
+.cadastro input {
+    width: 100%;
+
+    padding: 10px 12px;
+
+    margin-bottom: 4px;
+}
+
+
+/* BOTÃO DO CADASTRO */
+
+.cadastro button {
+    width: 100%;
+
+    padding: 12px;
+
+    background-color: var(--cor-secundaria);
+
+    color: var(--cor-branca);
+
+    border: 2px solid var(--cor-secundaria);
+
+    border-radius: 8px;
+
+    font-size: 1rem;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.cadastro button:hover {
+    background-color: #06632C;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.20);
+}
+
+.cadastro button:focus {
+    outline: 3px solid var(--cor-destaque);
+
+    outline-offset: 3px;
+}
+
+.cadastro button:active {
+    background-color: #166534;
+
+    box-shadow: none;
+}
+/* ==============================
+   BADGES
+   ============================== */
+
+.badge {
+    display: inline-block;
+
+    background-color: var(--cor-secundaria-clara);
+    color: #166534;
+
+    padding: 5px 10px;
+
+    border-radius: 20px;
+
+    font-size: 0.75rem;
+
+    font-weight: bold;
+
+    margin-bottom: 12px;
+}
+/* ==============================
+   ALERTA
+   ============================== */
+
+.alerta {
+    max-width: 600px;
+
+    margin: 20px auto;
+
+    padding: 14px 18px;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+}
+
+.alerta-sucesso {
+    background-color: var(--cor-secundaria-clara);
+
+    color: #166534;
+
+    border: 1px solid var(--cor-secundaria);
+}
+/* MODAL */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.25);
+
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal-conteudo {
+    position: relative;
+
+    background-color: #FFFFFF;
+    color: #1F2937;
+
+    max-width: 500px;
+    width: 100%;
+
+    padding: 35px;
+
+    border-radius: 14px;
+
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+
+    text-align: center;
+}
+
+.modal-conteudo h2 {
+    color: #1E40AF;
+    font-size: 2rem;
+    margin-bottom: 18px;
+}
+
+.modal-conteudo p {
+    color: #1F2937;
+    font-size: 1rem;
+    margin-bottom: 18px;
+}
+
+.fechar-modal {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+
+    border: none;
+    background: transparent;
+
+    font-size: 30px;
+    color: #1F2937;
+
+    cursor: pointer;
+}
+
+.fechar-modal:hover {
+    color: #DC2626;
+	.voltar-inicio {
+    display: inline-block;
+    margin-bottom: 20px;
+}
+}
+/* ==============================
+   MODO ESCURO
+   ============================== */
+
+body.modo-escuro {
+    --cor-texto: #F9FAFB;
+    --cor-fundo: #111827;
+    --cor-branca: #1F2937;
+    --cor-primaria: #60A5FA;
+    --cor-primaria-escura: #93C5FD;
+}
+
+body.modo-escuro .cabecalho {
+    background-color: #1F2937;
+}
+
+body.modo-escuro .menu a {
+    color: #F9FAFB;
+}
+
+body.modo-escuro .card,
+body.modo-escuro .formulario,
+body.modo-escuro .cadastro,
+body.modo-escuro .modal-conteudo {
+    background-color: #1F2937;
+    color: #F9FAFB;
+}
+
+body.modo-escuro input,
+body.modo-escuro select,
+body.modo-escuro textarea {
+    background-color: #374151;
+    color: #F9FAFB;
+    border-color: #6B7280;
+}
+
+body.modo-escuro .contato {
+    background-color: #064E3B;
+}
+/* ==============================
+   BOTÃO MODO ESCURO
+   ============================== */
+
+#modo-escuro {
+    background-color: var(--cor-primaria);
+    color: var(--cor-branca);
+    border: none;
+    padding: 10px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#modo-escuro:hover {
+    background-color: var(--cor-primaria-escura);
+}
+
+#modo-escuro:focus {
+    outline: 3px solid var(--cor-destaque);
+    outline-offset: 3px;
+}
+/* ==============================
+   MODO ESCURO
+   ============================== */
+
+body.modo-escuro {
+    --cor-texto: #F9FAFB;
+    --cor-fundo: #111827;
+    --cor-branca: #1F2937;
+    --cor-primaria: #60A5FA;
+    --cor-primaria-escura: #93C5FD;
+}
+
+body.modo-escuro .cabecalho {
+    background-color: #1F2937;
+}
+
+body.modo-escuro .menu a {
+    color: #F9FAFB;
+}
+
+body.modo-escuro .card,
+body.modo-escuro .formulario,
+body.modo-escuro .cadastro,
+body.modo-escuro .modal-conteudo {
+    background-color: #1F2937;
+    color: #F9FAFB;
+}
+
+body.modo-escuro input,
+body.modo-escuro select,
+body.modo-escuro textarea {
+    background-color: #374151;
+    color: #F9FAFB;
+    border-color: #6B7280;
+}
+
+body.modo-escuro .contato {
+    background-color: #064E3B;
+}

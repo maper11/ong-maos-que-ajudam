@@ -1,0 +1,340 @@
+// ========================================
+// MODAL
+// ========================================
+
+const modal = document.getElementById("modal");
+
+const botoesModal = document.querySelectorAll(".botao-modal");
+
+const fecharModal = document.querySelector(".fechar-modal");
+
+
+if (modal) {
+
+    botoesModal.forEach(function(botao) {
+
+        botao.addEventListener("click", function() {
+
+            modal.style.display = "flex";
+
+        });
+
+    });
+
+
+    fecharModal.addEventListener("click", function() {
+
+        modal.style.display = "none";
+
+    });
+
+
+    modal.addEventListener("click", function(event) {
+
+        if (event.target === modal) {
+
+            modal.style.display = "none";
+
+        }
+
+    });
+
+}
+
+
+// ========================================
+// SPA - NAVEGAÇÃO
+// ========================================
+
+const app = document.getElementById("app");
+
+const links = document.querySelectorAll("[data-pagina]");
+
+
+function renderizarPagina(pagina) {
+
+if (pagina === "inicio") {
+
+    app.innerHTML = `
+        <section id="inicio" class="hero">
+
+            <div class="hero-texto">
+
+                <h2>Juntos podemos fazer a diferença</h2>
+
+                <p>
+                    A ONG Mãos que Ajudam trabalha para transformar
+                    vidas por meio da solidariedade, voluntariado
+                    e ações sociais.
+                </p>
+
+                <a href="cadastro.html" class="botao">
+                    Seja voluntário
+                </a>
+
+            </div>
+
+            <div class="hero-imagem">
+
+                <img src="img/1.jpg"
+                     alt="Voluntários da ONG Mãos que Ajudam reunidos em uma ação solidária">
+
+            </div>
+
+        </section>
+
+
+        <section id="sobre" class="secao">
+
+            <h2>Sobre nós</h2>
+
+            <p>
+                A ONG Mãos que Ajudam reúne pessoas dispostas
+                a contribuir com projetos sociais e ações
+                comunitárias.
+            </p>
+
+        </section>
+
+
+        <section id="projetos" class="secao">
+
+            <h2>Nossos projetos</h2>
+
+            <div class="cards">
+
+                <article class="card">
+
+                    <span class="badge">
+                        Projeto ativo
+                    </span>
+
+                    <h3>Arrecadação</h3>
+
+                    <p>
+                        Campanhas para arrecadar alimentos,
+                        roupas e outros itens.
+                    </p>
+
+                    <button class="botao-modal" type="button">
+                        Saiba mais
+                    </button>
+
+                </article>
+
+
+                <article class="card">
+
+                    <span class="badge">
+                        Voluntariado
+                    </span>
+
+                    <h3>Voluntariado</h3>
+
+                    <p>
+                        Pessoas podem participar das nossas
+                        ações e projetos sociais.
+                    </p>
+
+                    <button class="botao-modal" type="button">
+                        Saiba mais
+                    </button>
+
+                </article>
+
+
+                <article class="card">
+
+                    <span class="badge">
+                        Ação social
+                    </span>
+
+                    <h3>Ações sociais</h3>
+
+                    <p>
+                        Projetos voltados para ajudar
+                        pessoas em situação de vulnerabilidade.
+                    </p>
+
+                    <button class="botao-modal" type="button">
+                        Saiba mais
+                    </button>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <section id="contato" class="secao contato">
+
+            <h2>Entre em contato</h2>
+
+            <p>
+                Quer fazer parte dessa iniciativa?
+                Cadastre-se para conhecer nossas ações.
+            </p>
+
+            <a href="cadastro.html" class="botao">
+                Fazer cadastro
+            </a>
+
+        </section>
+    `;
+
+}
+
+
+    if (pagina === "sobre") {
+
+        app.innerHTML = `
+            <section id="sobre" class="secao">
+
+                <h2>Sobre nós</h2>
+
+                <p>
+                    A ONG Mãos que Ajudam reúne pessoas dispostas
+                    a contribuir com projetos sociais e ações
+                    comunitárias.
+                </p>
+
+            </section>
+        `;
+
+    }
+
+
+if (pagina === "projetos") {
+
+    const projetos = [
+        {
+            titulo: "Arrecadação",
+            categoria: "Projeto ativo",
+            descricao: "Campanhas para arrecadar alimentos, roupas e outros itens."
+        },
+        {
+            titulo: "Voluntariado",
+            categoria: "Voluntariado",
+            descricao: "Pessoas podem participar das nossas ações e projetos sociais."
+        },
+        {
+            titulo: "Ações sociais",
+            categoria: "Ação social",
+            descricao: "Projetos voltados para ajudar pessoas em situação de vulnerabilidade."
+        }
+    ];
+
+    const cards = projetos.map(function(projeto) {
+
+        return `
+            <article class="card">
+
+                <span class="badge">
+                    ${projeto.categoria}
+                </span>
+
+                <h3>${projeto.titulo}</h3>
+
+                <p>
+                    ${projeto.descricao}
+                </p>
+
+                <button class="botao-modal" type="button">
+                    Saiba mais
+                </button>
+
+            </article>
+        `;
+
+    }).join("");
+
+
+    app.innerHTML = `
+        <section id="projetos" class="secao">
+
+            <h2>Nossos projetos</h2>
+
+            <div class="cards">
+                ${cards}
+            </div>
+
+        </section>
+    `;
+
+}
+
+
+    if (pagina === "contato") {
+
+        app.innerHTML = `
+            <section id="contato" class="secao contato">
+
+                <h2>Entre em contato</h2>
+
+                <p>
+                    Quer fazer parte dessa iniciativa?
+                    Cadastre-se para conhecer nossas ações.
+                </p>
+
+                <a href="cadastro.html" class="botao">
+                    Fazer cadastro
+                </a>
+
+            </section>
+        `;
+
+    }
+
+}
+
+
+// ========================================
+// CAPTURA DOS CLIQUES DO MENU
+// ========================================
+
+links.forEach(function(link) {
+
+    link.addEventListener("click", function(event) {
+
+        event.preventDefault();
+
+        const pagina = link.getAttribute("data-pagina");
+
+        renderizarPagina(pagina);
+
+        window.history.pushState(
+            {},
+            "",
+            "#" + pagina
+        );
+
+    });
+
+});
+// ========================================
+// MODO ESCURO
+// ========================================
+
+const botaoModoEscuro = document.getElementById("modo-escuro");
+
+if (botaoModoEscuro) {
+
+    botaoModoEscuro.addEventListener("click", function() {
+
+        document.body.classList.toggle("modo-escuro");
+
+        if (document.body.classList.contains("modo-escuro")) {
+
+            botaoModoEscuro.textContent = "☀️ Modo claro";
+
+        } else {
+
+            botaoModoEscuro.textContent = "🌙 Modo escuro";
+
+        }
+
+    });
+
+}
+
